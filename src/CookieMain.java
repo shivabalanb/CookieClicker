@@ -70,7 +70,7 @@ public class CookieMain extends JFrame {
 		cookiePanel.setBounds(100, 200, 200, 220);
 		cookiePanel.setBackground(BACKGROUND_COLOR);
 
-		ImageIcon cookieIcon = new ImageIcon(getClass().getResource("cookie.png"));
+		ImageIcon cookieIcon = new ImageIcon("res/cookie.png");
 
 		JButton cookieButton = new JButton();
 		cookieButton.setBackground(null);
