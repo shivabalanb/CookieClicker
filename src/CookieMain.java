@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,7 +31,7 @@ public class CookieMain extends JFrame {
 
 	public static void main(String[] args) {
 
-		CookieMain a = new CookieMain();
+		new CookieMain();
 
 	}
 
@@ -194,62 +195,62 @@ public class CookieMain extends JFrame {
 		public void actionPerformed(ActionEvent event) {
 			String actionString = event.getActionCommand();
 			switch (actionString) {
-			case "cookie": {
-				cookieCounter++;
-				counterLabel.setText(cookieCounter + " cookies!");
-				break;
-			}
-			case "Cursor": {
-				if (cookieCounter >= cursorPrice) {
-					cookieCounter -= cursorPrice;
-					cursorPrice += 10;
+				case "cookie": {
+					cookieCounter++;
 					counterLabel.setText(cookieCounter + " cookies!");
-					messageText.setText("Cursor\n[Price:  " + cursorPrice + "]\nAutoclicks once every 5 seconds");
-
-					cursorNumer++;
-					button1.setText("Cursor (" + cursorNumer + ")");
-					perSecond += 0.2;
-					timerUpdate();
-				} else {
-					messageText.setText("you need more cookies!");
+					break;
 				}
-				break;
+				case "Cursor": {
+					if (cookieCounter >= cursorPrice) {
+						cookieCounter -= cursorPrice;
+						cursorPrice += 10;
+						counterLabel.setText(cookieCounter + " cookies!");
+						messageText.setText("Cursor\n[Price:  " + cursorPrice + "]\nAutoclicks once every 5 seconds");
 
-			}
-			case "Grandma": {
-				if (cookieCounter >= grandmaPrice) {
-					cookieCounter -= grandmaPrice;
-					grandmaPrice += 20;
-					counterLabel.setText(cookieCounter + " cookies!");
-					messageText.setText(
-							"Grandma\n[Price:  " + grandmaPrice + "]\nEach grandma produces 1 cookie every second");
+						cursorNumer++;
+						button1.setText("Cursor (" + cursorNumer + ")");
+						perSecond += 0.2;
+						timerUpdate();
+					} else {
+						messageText.setText("you need more cookies!");
+					}
+					break;
 
-					grandmaNumber++;
-					button2.setText("Grandma (" + grandmaNumber + ")");
-					perSecond += 1;
-					timerUpdate();
-				} else {
-					messageText.setText("you need more cookies!");
 				}
-				break;
+				case "Grandma": {
+					if (cookieCounter >= grandmaPrice) {
+						cookieCounter -= grandmaPrice;
+						grandmaPrice += 20;
+						counterLabel.setText(cookieCounter + " cookies!");
+						messageText.setText(
+								"Grandma\n[Price:  " + grandmaPrice + "]\nEach grandma produces 1 cookie every second");
 
-			}
-			case "Bakery": {
-				if (cookieCounter >= bakeryPrice) {
-					cookieCounter -= bakeryPrice;
-					bakeryPrice += 50;
-					counterLabel.setText(cookieCounter + " cookies!");
+						grandmaNumber++;
+						button2.setText("Grandma (" + grandmaNumber + ")");
+						perSecond += 1;
+						timerUpdate();
+					} else {
+						messageText.setText("you need more cookies!");
+					}
+					break;
 
-					bakeryNumber++;
-					button3.setText("Bakery (" + bakeryNumber + ")");
-					perSecond += 5;
-					timerUpdate();
-				} else {
-					messageText.setText("you need more cookies!");
 				}
-				break;
+				case "Bakery": {
+					if (cookieCounter >= bakeryPrice) {
+						cookieCounter -= bakeryPrice;
+						bakeryPrice += 50;
+						counterLabel.setText(cookieCounter + " cookies!");
 
-			}
+						bakeryNumber++;
+						button3.setText("Bakery (" + bakeryNumber + ")");
+						perSecond += 5;
+						timerUpdate();
+					} else {
+						messageText.setText("you need more cookies!");
+					}
+					break;
+
+				}
 
 			}
 		}
